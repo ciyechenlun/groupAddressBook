@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- 配置拦截器 -->
+	<mvc:interceptors>
+			<!-- 添加日志  -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**/**/**.htm" />
+			<bean class="com.cmcc.zysoft.groupaddressbook.util.UserOperateLog"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+</beans>

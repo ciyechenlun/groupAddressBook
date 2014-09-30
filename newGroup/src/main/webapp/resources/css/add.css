@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* CSS Document */
+.add{
+	width:400px;
+	font: 14px  "微软雅黑", Arial, Helvetica, sans-serif;
+}
+.add td{
+	padding-bottom:5px;
+	margin:0px;
+	}
+.add input{
+	width:200px;
+	border:1px solid #CCC;
+}
+.text{
+	color:#999;
+}
+.next-btn {
+	margin:0px;
+	text-indent: -999px;
+	padding-top:15px;
+}
+.next-btn a {
+	background:url(../images/next_btn.png) top no-repeat;
+	cursor: pointer;
+	display: block;
+	height: 40px;
+	text-indent: -9999px;
+	width: 140px
+}
+.next-btn a:hover{
+	background-position: 0 -40px
+}
+.shehe{
+	width:400px;
+	font: 14px  "微软雅黑", Arial, Helvetica, sans-serif;
+}
+.shehe input{
+	margin:0;
+	padding:0 5px;
+	vertical-align:bottom;
+}
+.shehe_text{
+	vertical-align:middle;
+}
+#admin_table_btn ul{
+	margin:50px 0 0 0;
+}
+#admin_table_btn ul li a {
+	background-image: url(../images/o_c_btn.png);
+	background-repeat: no-repeat;
+	float: left;
+	height: 0;
+	overflow: hidden;
+	padding-top: 40px;
+	margin-right:10px;
+}
+#admin_table_btn ul li#ok a {
+	background-position:0px 0;
+	width:130px
+}
+#admin_table_btn ul li#cancel a {
+	background-position: -130px 0;
+	width: 130px
+}
+
+#admin_table_btn ul li#ok a:hover {
+	background-position: 0px -40px
+}
+#admin_table_btn ul li#cancel a:hover {
+	background-position: -130px -40px
+}
+ #admin_table_btn ul li{
+	display: inline
+}
+.clearfix:after {content:'\0020';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1;}
+.mt10{ margin-top:10px;}
+.mt30{ margin-top:30px;}
+.ml10{ margin-left:10px;}
+
+.send .tit{ border-bottom:1px solid #eaeaea; font-weight:bold; line-height:24px;}
+.send .f_l,.send .f_r{ width:40%;}
+.send .f_l{ margin-left:20px;}
+.send .f_r{ margin-right:20px;}
+.hui{ color:#b9b9b9;}
+.red{ color:#e37979;}
+.treebg{ margin:10px 0; height:350px; padding:20px; background:#edf2f4; font-size:14px; line-height:22px;}
+.send{ margin-top:10px; font-size:14px;}
+.btn{ height:32px; text-align:center;}
+.btn .lis_btn{ overflow:hidden; float:none; display:inline-block; margin:0 7px; text-align:center;}
+.send .f_r input{ margin-right:5px; vertical-align:middle;}
+
+.step{ padding-left:10px;height:30px;border-bottom:1px #eaeaea solid;color:#8f9399;font-weight:bold; line-height:30px}
+.step span{ margin-right:50px; padding-right:20px; background:url(../images/bg_step.gif) no-repeat right;}
+.step img{ margin-right:3px; vertical-align:middle;}
+.step span.on{ color:#000;}
+.sdgg_p{ padding-left:10px; margin-bottom:10px;}
+.opbtns{ display:inline-block;}
+.send .textl{ text-align:left;}
+.send .mt30{ padding-left:50px;}
+
+.xzggh{ text-align:center; padding:50px 0;}
+.selecttext{ width:275px; height:30px; border:1px solid #ddd; color:#697a83; font-weight:bold;}
+.gglist li{ position:relative; float:left; margin:15px; width:108px; height:140px; text-align:center; cursor:pointer;}
+.gglist li p{ margin-bottom:5px; width:106px; height:106px; border:1px solid #c6c6c6;}
+.gglist li em{ position:absolute; left:0; top:0; width:106px; height:106px; border:1px solid #c6c6c6;opacity:.1;-moz-opacity:.1; filter:alpha(opacity=10); background:#000;}
+.hide{ display:none;}
+
+.edit{ margin-top:10px;}
+.edit .f_l{ width:60%;}
+.edit .f_r{ width:40%; text-align:center;}
+
+.gg_tc label{ display:inline-block; width:100px; text-align:right; line-height:30px;}
+.gg_tc .opcek{ width:265px;}
+
+.phone{ position:relative; height:320px;}
+.phone .phonebg{ position:absolute; left:50%; margin-left:-94px; padding:45px 18px 45px 23px; width:147px; height:236px; background:url(../images/9180.png) no-repeat center;}
+.phone .phonetext{ overflow:auto;height:236px;}
+
+.phone2{ position:relative; height:371px;}
+.phone2 .phonebg{ position:absolute; left:50%; margin-left:-96px; padding:37px 13px 43px; width:166px; height:291px; background:url(../images/s2.png) no-repeat;}
+.phone2 .phonetext{ overflow:auto;height:291px;}
+
+.phone4{ position:relative; height:373px;}
+.phone4 .phonebg{ position:absolute; left:50%; margin-left:-98px; padding:40px 13px; width:170px; height:290px; background:url(../images/s4.png) no-repeat center;}
+.phone4 .phonetext{overflow:auto;height:290px;}

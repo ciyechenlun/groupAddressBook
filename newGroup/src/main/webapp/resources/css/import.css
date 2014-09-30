@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+.navBar{
+	padding: 5px;
+}
+
+.navBar a{
+	text-decoration: none;
+	font-size: 12px;
+	margin: 20px;
+}
+

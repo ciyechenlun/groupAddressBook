@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0; padding:0}
+body{font-family:"微软雅黑","黑体",Verdana, Geneva, sans-serif; color:#313131}
+a{text-decoration:none;color:#1e70c1;}
+
+.header{font-size:16px; font-weight:bold; padding-top:10px;}
+
+.header img{vertical-align:middle}
+
+.list,.list dt,.list dd{clear:both; overflow:hidden; margin:0; padding:0}
+.list{padding:20px 0; line-height:24px}
+.list dt{font-size:16px; padding:0 0 5px; border-bottom:1px solid #1e70c1;}
+.list dd{padding:5px 0 5px}
+.list span{width:70%; display:inline-block}
+.list a{width:30%; display:inline-block; text-align:right}
+.footer{text-align:center; padding:5px 0}

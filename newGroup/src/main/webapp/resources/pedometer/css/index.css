@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0; padding:0}
+body{background:#313131 url(../img/bodyBg.png); overflow:hidden; font-size:12px; color:#fff; font-family:"微软雅黑",Verdana, Geneva, sans-serif}
+ul,ol,dl,li{list-style:none}
+a{color:#fff; outline: none;}
+a:active{star:expression(this.onFocus=this.blur());}
+:focus{outline:0;}
+a img{border:none 0}
+
+.full{width:100%; background:url(../img/headBg.png) repeat-x;}
+.head{height:70px; padding:0 5px; overflow:hidden; clear:both}
+.logo{float:left;}
+.userInfo{float:right; height:22px; margin:5px 0 0; line-height:22px}
+.userInfo img{vertical-align:middle; margin:0 5px 0 0}
+.headA{margin:0 10px}
+.logout{background:url(../img/btnBg1.png) no-repeat; width:74px; height:22px; text-decoration:none; display:inline-block; text-align:center; line-height:22px; color:#000}
+.main{margin:0; background:#f4f4f4;}
+.mainLeft{width:180px; height:600px; float:left; background:url(../img/leftBg.png) bottom left no-repeat; }
+.mainRight{width:180px; float:left; overflow:auto; background:#f4f4f4; }
+.mainRightDiv{width:100%; height:100%; display:none; overflow:auto;}
+.clearFix{clear:both; overflow:hidden; height:0; line-height:0}
+
+
+
+.nav{width:180px; height:auto; padding:40px 0 0; font-size:14px; line-height:40px}
+.nav dt,.nav dd{vertical-align:bottom;height:40px;}
+.nav dt{padding:0 0 0 30px;color:#1e70c1;}
+.nav dd{padding:0 0 0 40px; margin-top:-2px; font-size:12px}
+.nav dt a{color:#1e70c1; text-decoration:none}
+.nav dd a{color:#1b1b1b; text-decoration:none}
+.nav a:hover{font-weight:bold}
+.nav .itemSelected{background:url(../img/navItemBg.png) right top no-repeat}
+.nav .itemSelected a{color:#fff; font-weight:bold}

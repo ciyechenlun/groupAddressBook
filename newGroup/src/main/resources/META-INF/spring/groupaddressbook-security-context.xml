@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+
+	<bean id="springSecurityFilterChain" class="org.springframework.security.web.FilterChainProxy">
+		<constructor-arg name="filterChains">
+			<util:list>
+				<security:filter-chain pattern="/" filters="loginAddressFilter" />
+				<security:filter-chain pattern="/login" filters="loginAddressFilter" />
+				<security:filter-chain pattern="/login.htm" filters="loginAddressFilter" />
+				<security:filter-chain pattern="/login/**" filters="loginAddressFilter" />
+				<security:filter-chain pattern="/security/**" filters="none" />
+				<!-- 不对手机侧代码进行拦截 -->
+				<security:filter-chain pattern="/pc/company/images/**" filters="none" />
+				<security:filter-chain pattern="/mobile/**" filters="none" />
+				<security:filter-chain pattern="/404.htm" filters="none" />
+				<security:filter-chain pattern="/500.htm" filters="none" />
+				<security:filter-chain pattern="/attached/**" filters="none" />
+				<security:filter-chain pattern="/resources/**" filters="none" />
+				<security:filter-chain pattern="/favicon.ico" filters="none" />
+				
+				<security:filter-chain pattern="/**"
+					filters="
+	           		securityContextPersistenceFilter,
+					concurrentSessionFilter,
+	           		logoutFilter,
+	           		basicProcessingFilter,
+	           		usernamePasswordAuthenticationFilter,
+	           		securityContextHolderAwareRequestFilte,
+	           		sessionManagementFilter,
+	           		userAccessLogFilter,
+	           		exceptionTranslationFilter,
+	           		filterSecurityInterceptor" />
+			</util:list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="loginAddressFilter" class="com.cmcc.zysoft.spring.security.filter.LoginAddressFilter" />
+	
+	<bean id="concurrentSessionFilter" class="com.cmcc.zysoft.spring.security.filter.ConcurrentSessionFilter">
+		<constructor-arg name="sessionRegistry"  ref="sessionRegistry"/>
+		<constructor-arg name="expiredUrl" value="/security/sessionTimeoutHandler"/>
+	</bean>
+
+	<bean id="XSSFilter" class="com.cmcc.zysoft.spring.security.filter.xss.XSSFilter" />
+	
+	<bean id="userAccessLogFilter" class="com.cmcc.zysoft.spring.security.filter.UserAccessLogFilter">
+		<property name="jmxOption" value="true" />
+	</bean>
+	
+	<bean id="securityContextRepository" class="org.springframework.security.web.context.HttpSessionSecurityContextRepository" />
+	
+	<bean id="securityContextPersistenceFilter" class="org.springframework.security.web.context.SecurityContextPersistenceFilter">
+		<constructor-arg ref="securityContextRepository" />
+	</bean>
+
+	<bean id="logoutFilter"
+		class="org.springframework.security.web.authentication.logout.LogoutFilter">
+		<constructor-arg value="/security/logoutHandler" />
+		<constructor-arg>
+			<util:list>
+				<bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler" />
+			</util:list>
+		</constructor-arg>
+		<property name="filterProcessesUrl" value="/logout"/> 
+	</bean>
+
+	<!-- Http Base认证 -->
+	<bean id="basicProcessingFilter"
+		class="org.springframework.security.web.authentication.www.BasicAuthenticationFilter">
+		<constructor-arg name="authenticationManager" ref="authenticationManager" />
+		<constructor-arg name="authenticationEntryPoint">
+			<bean class="org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint">
+				<property name="realmName" value="Sellmanager realm" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<!-- Form 表单认证 -->
+	<bean id="usernamePasswordAuthenticationFilter" class="com.cmcc.zysoft.spring.security.capatch.ValidateCodeUsernamePasswordAuthenticationFilter">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="authenticationFailureHandler" ref="failureHandler" />
+		<property name="authenticationSuccessHandler" ref="successHandler" />
+		<property name="rememberMeServices" ref="rememberMeServices" />
+		<property name="sessionAuthenticationStrategy" ref="sessionStrategy" />
+	</bean>
+
+	<bean id="successHandler"
+		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<property name="defaultTargetUrl" value="/security/loginSuccess" />
+		<property name="redirectStrategy">
+			<bean class="com.cmcc.zysoft.spring.security.ForwardRedirectStrategy" />
+		</property>
+		<property name="alwaysUseDefaultTargetUrl" value="true" />
+	</bean>
+
+	<bean id="failureHandler"
+		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<property name="defaultFailureUrl" value="/security/loginFailure" />
+		<property name="useForward" value="true" />
+	</bean>
+
+	<bean name="securityContextHolderAwareRequestFilte"
+		class="org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter" />
+
+	<bean id="rememberMeFilter"
+		class="org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter">
+		<constructor-arg name="authenticationManager" ref="authenticationManager" />
+		<constructor-arg name="rememberMeServices" ref="rememberMeServices" />
+	</bean>
+
+	<bean id="persistentTokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+	</bean>
+
+	<bean id="rememberMeServices"
+		class="org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices">
+		<constructor-arg name="userDetailsService" ref="userDetailsService" />
+		<constructor-arg name="key" value="eGaln6MmeZ2yMad-#Ori$BS=J)Mi!xyR3B3S" />
+		<constructor-arg name="tokenRepository" ref="persistentTokenRepository" />
+		<property name="tokenValiditySeconds" value="1209600"/>
+		<property name="alwaysRemember" value="false" />
+	</bean>
+
+	<bean id="rememberMeAuthenticationProvider"
+		class="org.springframework.security.authentication.RememberMeAuthenticationProvider">
+		<constructor-arg name="key" value="eGaln6MmeZ2yMad-#Ori$BS=J)Mi!xyR3B3S" />
+	</bean>
+
+	<bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
+	
+	<bean id="sessionStrategy" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+		<constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+		<property name="exceptionIfMaximumExceeded"  value="false"/>
+		<property name="migrateSessionAttributes" value="true"/>
+		<property name="maximumSessions" value="1"/>
+	</bean>
+	
+	<bean id="invalidSessionStrategy" class="com.cmcc.zysoft.spring.security.session.RedirectInvalidSessionStrategy">
+		<constructor-arg name="invalidSessionUrl" value="/security/sessionTimeoutHandler"/>
+	</bean>
+	
+	<bean name="sessionManagementFilter" class="org.springframework.security.web.session.SessionManagementFilter">
+		<constructor-arg name="securityContextRepository" ref="securityContextRepository" />
+		<constructor-arg name="sessionStrategy" ref="sessionStrategy" />
+		<property name="invalidSessionStrategy" ref="invalidSessionStrategy" />
+	</bean>
+	
+	<bean id="exceptionTranslationFilter"
+		class="org.springframework.security.web.access.ExceptionTranslationFilter">
+		<constructor-arg name="authenticationEntryPoint">
+			<bean class="com.cmcc.zysoft.spring.security.SessionTimeOutInterceptor">
+			 	<constructor-arg name="loginFormUrl" value="/security/sessionTimeoutHandler" />
+			 	<!-- <property name="useForward" value="true" />  -->
+				<!-- <constructor-arg name="loginFormUrl" value="/login.htm" /> -->
+				<!-- <property name="forceHttps" value="true" /> -->
+			</bean>
+		</constructor-arg>
+		<property name="accessDeniedHandler">
+			<bean class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
+				<property name="errorPage" value="/security/accessDenied" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="securityMetadataSource" class="com.cmcc.zysoft.spring.security.CustomFilterInvocationSecurityMetadataSource" />
+	
+	<bean id="filterSecurityInterceptor"
+		class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="securityMetadataSource">
+			<ref bean="securityMetadataSource" />
+		</property>
+	</bean>
+
+	<bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="allowIfAllAbstainDecisions" value="false" />
+		<constructor-arg name="decisionVoters">
+			<util:list>
+				<bean class="org.springframework.security.access.vote.RoleVoter">
+					<property name="rolePrefix" value="" />
+				</bean>
+				<bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
+			</util:list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="authenticationManager"
+		class="org.springframework.security.authentication.ProviderManager">
+		<constructor-arg name="providers">
+			<util:list>
+				<ref local="daoAuthenticationProvider" />
+				<ref local="rememberMeAuthenticationProvider" />
+			</util:list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="saltSource" class="com.cmcc.zysoft.spring.security.CustomSaltSource" />
+	
+	<bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+	
+	<bean id="daoAuthenticationProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService" ref="userDetailsService" />
+		<!-- 当用户不存在时，能够抛出UsernameNotFoundException异常 -->
+		<property name="hideUserNotFoundExceptions" value="false" />
+		<property name="passwordEncoder" ref="passwordEncoder" />
+		<property name="saltSource" ref="saltSource" />
+	</bean>
+	
+	<bean id="userDetailsService" class="com.cmcc.zysoft.spring.security.CustomUserDetailsServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="authenticationLoggerListener" class="org.springframework.security.authentication.event.LoggerListener" />
+	
+	<bean id="authorizationLoggerListener" class="org.springframework.security.access.event.LoggerListener" />
+
+	<!-- 安全通道配置 start -->
+	<!--  
+	<bean id="channelProcessingFilter"
+		class="org.springframework.security.web.access.channel.ChannelProcessingFilter">
+		<property name="channelDecisionManager" ref="channelDecisionManager" />
+		<property name="securityMetadataSource">
+			<security:filter-security-metadata-source path-type="ant">
+				<security:intercept-url pattern="/login.htm" access="REQUIRES_SECURE_CHANNEL" />
+			</security:filter-security-metadata-source>
+		</property>
+	</bean>
+	
+	<bean id="channelDecisionManager" class="org.springframework.security.web.access.channel.ChannelDecisionManagerImpl">
+		<property name="channelProcessors">
+			<util:list>
+				<ref bean="secureChannelProcessor" />
+				<ref bean="insecureChannelProcessor" />
+			</util:list>
+		</property>
+	</bean>
+	
+	<bean id="secureChannelProcessor" class="org.springframework.security.web.access.channel.SecureChannelProcessor" />
+	
+	<bean id="insecureChannelProcessor" class="org.springframework.security.web.access.channel.InsecureChannelProcessor" />
+	-->
+	<!-- 安全通道配置 end -->
+
+</beans>

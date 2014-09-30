@@ -1,0 +1,316 @@
+﻿@charset "utf-8";
+/* 
+	@名称: style
+	@功能: 公共css
+	@作者: 科大恒星 高科 2012.08.23 17:00:00	
+*/
+a {
+	color: #0066cc
+}
+
+a:hover {
+	color: #598200
+}
+
+.pd10 {
+	padding: 10px;
+}
+
+.header {
+
+	overflow: hidden;
+	background: #1383c2 url(/resources/img/headerBg.png) repeat-x 0 0;
+	height: 75px;
+}
+
+.header .logo {
+	float: left;
+}
+
+.header .topLink {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0 15px 0 35px;
+	height: 24px;
+	background: url(/resources/img/topLink.png) no-repeat 0 0;
+}
+
+.header .topLink li {
+	display: inline;
+	line-height: 24px;
+	color: #fff;
+}
+
+.header .topLink li a {
+	margin: 0 5px;
+	color: #fbec01;
+}
+
+.header .topLink li a:hover {
+	color: #fbec01;
+}
+
+.topMenu {
+	margin: 21px 0 0 0;
+	height: 54px;
+	overflow: hidden;
+}
+
+.topMenu li {
+	display: block;
+	float: left;
+	font-weight: bold;
+	margin: 0 2px 0 0;
+}
+
+.topMenu li img {
+	margin: 12px 3px 0 0;
+	float: left;
+}
+
+.topMenu li a {
+	text-decoration: none;
+	cursor: pointer;
+	display: block;
+	float: left;
+	padding: 14px 10px 0 10px;
+	font-weight: bold;
+	font-size: 14px;
+	height: 40px;
+	width:90px;
+	line-height:40px;
+}
+
+.topMenu li a:link,.topMenu li a:visited {
+	color: #1252b3;
+}
+
+.topMenu li a:hover {
+	color: #1252b3;
+	background: url(/resources/img/menu.png) no-repeat 0 0;
+}
+
+
+.topMenu li a.curTopMenu {
+	color: #fff;
+	background: url(/resources/img/menu.png) no-repeat 0 -54px;
+}
+
+
+.w-list ul.db-list,.w-list ul.xl-list {
+	background: url(/resources/img/digital.png) no-repeat 10px 10px;
+}
+
+.w-list li {
+	padding: 0 12px 0 28px;
+	border-bottom: 1px #e0e0e0 solid;
+	height: 29px;
+	line-height: 29px;
+	overflow: hidden
+}
+
+.w-list ul.gg-list li {
+	padding: 0 12px 0 24px;
+	background: url(/resources/img/point1.png) no-repeat 10px center;
+}
+
+.w-list li a {
+	display: block;
+	color: #555;
+}
+
+.w-list li a:hover {
+	color: #598200;
+}
+
+.w-list li span {
+	float: right;
+	display: block;
+}
+
+.opBtn {
+	padding: 0 10px;
+	background: url(/resources/img/opBtn.png) repeat-x 0 0;
+	height: 19px;
+	line-height: 19px;
+	color: #333;
+	border: 1px #9a9a9a solid;
+	cursor: pointer;
+}
+
+.w-list .opBtn {
+	margin: 4px 0 0 0;
+}
+
+.w-list .sell {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #f95005;
+}
+
+.w-list .time {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #999;
+	font-size: 11px;
+}
+
+.w_maptools {
+	padding: 0 10px;
+}
+
+.w_maptools li {
+	display: inline;
+}
+
+.w_maptools a {
+	display: block;
+	float: left;
+	padding: 0 20px;
+	margin: 3px;
+	text-decoration: none;
+	height: 26px;
+	line-height: 26px;
+}
+
+.w_maptools a.tool-item-selected {
+	background: url(/resources/img/tool-item-selected.jpg) repeat-x 0 0;
+	border: 1px #2b79c8 solid;
+	color: #fff;
+	font-weight: bold;
+}
+
+.w_maptools a.tool-item {
+	background: url(/resources/img/tool-item.jpg) repeat-x 0 0;
+	border: 1px #ccc solid;
+	color: #888;
+	text-decoration: none;
+}
+/*左边折叠菜单*/
+.leftMenu li a {
+	line-height: 28px;
+	height: 28px;
+	display: block;
+	color: #323232;
+	padding: 0 0 0 15px;
+	background: #fafafa url(/resources/img/leftmenu.png) no-repeat right
+		center;
+	border-bottom: 1px solid #c2d0d3;
+}
+
+.leftMenu li a:hover {
+	border-bottom: 1px solid #c2d0d3;
+	background: #f2ffd3 url(/resources/img/leftmenu.png) no-repeat right center;
+	cursor: pointer;
+	color: #598200;
+	text-decoration: none;
+}
+
+.leftMenu li a.selected {
+	border-bottom: 1px solid #c2d0d3;
+	background: #0088cc url(/resources/img/leftmenu.selected.png) no-repeat
+		right center;
+	cursor: default;
+	color: #fff;
+	font-weight: 700;
+}
+
+.leftMenu li a.selected:hover {
+	border-bottom: 1px solid #c2d0d3;
+	background: #f2ffd3 url(/resources/img/leftmenu.png) no-repeat right center;
+	cursor: pointer;
+	color: #598200;
+	text-decoration: none;
+}
+
+/*控制表格区域*/
+.finder-action {
+	background: #f9fbfc;
+	padding: 6px;
+	overflow: hidden;
+}
+
+.finder-search {
+	width: auto;
+	float: right;
+	padding: 2px 0 0 0;
+}
+
+.finder-search .combo {
+	float: left;
+	*margin: 0;
+	_margin-right: -3px;
+	padding-left: 3px;
+}
+
+.finder-search .textinput {
+	padding: 2px 6px;
+	margin: 0;
+	border: 1px #c8c8c8 solid;
+	color: #666;
+	height: 18px;
+	line-height: 18px;
+	background: #fff;
+}
+
+.finder-search .textinput:focus {
+	padding: 2px 6px;
+	margin: 0;
+	border: 1px #f1ca7f solid;
+	color: #333;
+	height: 18px;
+	line-height: 18px;
+	background: #ffffd8;
+}
+
+.finder-button {
+	float: left;
+}
+
+.linkBtn {
+	float: left;
+	margin: 0 3px;
+}
+
+.linkBtn img {
+	float: left;
+	margin-right: 4px;
+}
+
+.tableform {
+	background: #f5f5f5;
+	border: 1px #ccc solid;
+	padding: 10px;
+}
+
+.tableform th {
+	font-weight: normal;
+	text-align: right;
+}
+
+.tableform table {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.tableform th,.tableform td {
+	padding: 1px 2px;
+	*padding: 0 2px;
+}
+/**************************************************************
+   底部
+ **************************************************************/
+.footer {
+	background: url(/resources/img/bottomBody.jpg) repeat-x 0 0;
+}
+
+.copyright {
+	background: url(/resources/img/bottomBg.jpg) no-repeat 0 0;
+	height: 24px;
+}
+
+.copyright p {
+	text-align: center;
+	line-height: 24px;
+	font-family:微软雅黑;
+	color: #fff
+}

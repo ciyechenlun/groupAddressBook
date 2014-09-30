@@ -1,0 +1,95 @@
+/* 全局 */
+html, body{padding:0;margin:0;}
+h1,h2,h3,h4,p {padding:0;margin:0;}
+input,select,textarea {margin:0;padding:0;}
+img {border:0;}
+li {list-style-type:none;}
+ul {margin:0;padding:0;}
+a:link,a:visited,a:active {text-decoration:none;}
+a:hover {text-decoration:none;}
+a:focus {outline:0;}
+
+/* 基本 */
+.f_l {float:left;}
+.f_r {float:right;}
+.clear {clear:both;}
+.t_r {text-align:right;}
+.t_c {text-align:center;}
+.t_l {text-align:left;}
+
+/* login */
+.login_top {height:140px; background:url(../images/lobg.gif) repeat-x;}
+.lowarp {width:100%;background:#FFF;margin:0 auto;text-align:center;}
+.login_contain {width:853px;height:324px;background:url(../images/lopic.jpg) no-repeat 0 center;font-size:14px;color:#b0bbbf; line-height:37px}
+.locek{width:270px;height:37px;border:1px #ccc solid;line-height:37px;padding-left:5px;font-size:16px;font-family:"微软雅黑"}
+.locekyzm{width:85px;height:37px;border:1px #ccc solid;line-height:37px;padding-left:5px;font-size:16login_containpx;font-family:"微软雅黑"}
+.login_contain a:link,.login_contain a:visited {color:#339933}
+.login_contain a:hover {color:#2459b8}
+.lofot a:link,.lofot a:visited{color:#b0bbbf}
+.lofot a:hover{color:#919ca0; text-decoration:underline}
+
+.login_copyright {width:100%; background:#fff url(../images/locort.png) repeat-x; color:#bbbbbb;height:20px;color:#bbb; text-align:center;padding-top:42px;font-size:12px;overflow:hidden}
+
+/* 弹出 */
+.openwarp { border:1px #ddd solid; padding:10px; margin:0 auto; text-align:center;color:#333;line-height:30px;font-size:12px;color:#333; background:#FFF}
+.opentabs{padding:10px 0}
+.opentabs table td{padding:5px 0}.opentabs table td span{color:#697a83;}
+.opcek{width:395px;height:30px;padding:0 0 0 8px;border:1px #ddd solid;color:#697a83;font-weight:bold}
+.opxl{width:405px;height:30px;padding:0 0 0 8px;border:1px #ddd solid;color:#697a83;font-weight:bold}
+.opxl2{width:155px;height:30px;padding:0 0 0 8px;border:1px #ddd solid;margin:0 5px;color:#697a83;font-weight:bold}
+.opxlbig{width:426px;height:30px;padding:0 0 0 8px;border:1px #ddd solid;color:#697a83;font-weight:bold}
+.opcek2{width:80px;height:30px;padding:0 0 0 8px;border:1px #ddd solid;margin:0 5px;color:#697a83;font-weight:bold}
+.opcek3{width:145px;height:30px;padding:0 0 0 8px;border:1px #ddd solid;margin:0 5px;color:#697a83;}
+.opcek4{width:250px;height:30px;padding:0 0 0 8px;border:1px #ddd solid;margin:0 5px;color:#697a83;}
+.opcekbig{width:410px;height:30px;padding:0 0 0 8px;border:1px #ddd solid;margin:0 5px;color:#697a83;}
+
+.openbtn{height:50px;padding:20px 0 0 80px;}
+.opbtns2{width:151px;height:44px; background:url(../images/btnbg.png) no-repeat center;color:#c3e1f1;font-weight:bold; vertical-align:middle;line-height:44px;margin:8px 20px;}
+.opbtns2 img{padding:0 2px 0 20px; vertical-align:middle}
+.opbtns{width:151px;height:44px; background:url(../images/btnbg.png) no-repeat center;color:#c3e1f1;font-weight:bold; vertical-align:middle;line-height:44px;margin:0 20px; text-align:center}
+.opbtns img{padding:0 5px 0 0; vertical-align:middle}
+
+.opbtns3{width:151px;height:44px; background:url(../images/btnbg.png) no-repeat center;color:#c3e1f1;font-weight:bold; vertical-align:middle;line-height:44px;margin-top:20px;margin-left:20px; text-align:center}
+.opbtns3 img{padding:0 5px 0 0; vertical-align:middle}
+.openuser{color:#697a83;font-size:14px; text-align:left;}.openuser span{font-weight:bold;}
+.openuser img{padding:0 20px 8px 0}
+
+.openbq{height:31px;width:100%;background:#f6f8fa;font-weight:bold; clear:both;margin-bottom:8px}
+.openbg_on{width:145px; background:url(../images/openbqa.gif) no-repeat;color:#fff;}
+.openbg_on2{width:145px; background:url(../images/openbqb.gif) no-repeat;color:#fff;}
+.openbg_out{width:145px; background:none;color:#97b6c5;}
+
+.openbqa a:link,.openbqa a:visited{color:#fff;}
+.openbqa a:hover{color:#fff}
+.openbqb a:link,.openbqb a:visited{color:#99b6c6;}
+.openbqb a:hover{color:#99b6c6}
+
+
+.opennav{background:#d5dadd; display:block; overflow:hidden;padding:10px 0;}
+.listmenu{margin-left:30px}
+.opname{margin-top:40px; background:#99cfea url(../images/bzname.gif) no-repeat;height:31px; display:block; overflow:hidden;padding-left:30px;color:#fff;line-height:31px;width:75%}
+.pd70{padding-left:70px}
+
+.openbz{color:#697a83;font-size:14px; text-align:left;font-weight:bold}
+.openbz img{padding:5px 10px 20px 5px }
+
+.optab{line-height:40px;border-right:1px #eaeaea solid;font-size:14px;color:#555; text-align:left;}
+.optab th{background:#99cfea;border:1px #add9ee solid;color:#fff;border-right:none;font-weight:bold; text-align:center;padding:0 3px}
+.optab td{border-left:1px #eaeaea solid;border-bottom:1px #eaeaea solid; text-align:center;padding:0 3px}
+.optab img{ vertical-align:middle;}
+.opand{height:30px;padding:0 3px;border:1px #ddd solid;color:#555;}
+
+.openzj{margin:0 auto; text-align:center;background:#e7f7fb}
+.openzjnr{font-size:14px;color:#000;line-height:40px;padding-top:20px}
+.openzjnr span{font-weight:bold;color:#d54545;line-height:35px;}
+.openzjnr span img{ vertical-align:middle}
+
+.opzjs{width:130px;height:40px; background:url(../images/btn_zjbg.png) no-repeat center;color:#c3e1f1;font-weight:bold; vertical-align:middle;line-height:40px;margin:0 20px; text-align:center}
+.opzjs img{padding:0 5px 0 0; vertical-align:middle}
+
+/* 新建样式 */
+.openwarp2 {margin:0 auto;text-align:center;background:#FFF;display:block;overflow:hidden;height:350px;padding:10px}
+.open_title{font-size:14PX;color:#fff;font-weight:bold;display:block;text-align:left;padding:8px 0 15px 10px; background:url(../images/openbqa.gif) no-repeat;margin:0 8px 0 8px;}
+.open_old{ background:#edf2f5;line-height:30px;color:#97a2a8;font-size:14px;padding-left:10px;text-align:left;margin:0 8px 15px 8px}
+.open_old2{ background:#edf2f5;margin:0 8px 15px 8px;}
+.oldcek{border:1px #dddddd solid;text-align:left;color:#555;line-height:30px;margin:15px 0;width:95%;padding:2px 5px;font-weight:bold}

@@ -1,0 +1,109 @@
+.portal{
+	padding:0;
+	margin:0;
+	margin-top:-1px;
+	border:1px solid #99BBE8;
+	overflow:auto;
+}
+.portal-noborder{
+	border:0;
+}
+.portal-panel{
+	margin-bottom:-1px;
+	background:#fff;
+}
+.t-tools{
+	position:absolute;
+	left:0;
+	top:-10px;
+	z-index:9999;
+}
+
+.portal-column-td{
+	vertical-align:top;
+}	
+.portal-column{
+	padding:0 0 10px 10px;
+	overflow:hidden;
+}
+.portal-column-left{
+	padding-left:0;
+	margin-left:-1px;
+}
+.portal-column-right{
+	padding-right:0;
+}
+.portal-proxy{
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+.portal-spacer{
+	border:3px dashed #eee;
+	margin-bottom:10px;
+}
+
+/* Style for Usual tabs */
+.tab-statement {
+}
+.tab-statement .tab-content{
+	clear:both;
+	padding-top:5px;
+	*padding-top:0;
+	width:220px;
+
+	overflow:hidden;
+}
+.tab-statement .tab-trigger li { 
+	display:inline;
+}
+.tab-statement .tab-trigger{
+	float:left;
+}
+.tab-statement .select-statement{
+	float:right;
+}
+.tab-statement .tab-trigger a { font-size:12px;
+	display:block;
+	float:left;
+	padding:0 10px;
+	height:29px;
+	line-height:29px;
+	color:#6fa4df;
+	background:url(../themes/zhjl/images/ban_02.png) no-repeat; 
+	border:1px #cccccc solid;
+	margin-right:2px;
+	width:40px; 
+	border:none;
+	text-align:center;
+}
+.tab-statement .tab-trigger a:hover { font-size:12px;
+	background:url(../themes/zhjl/images/ban_02.png) no-repeat; 
+	width:40px; 
+	height:29px; 
+	line-height:29px; 
+	color:#6fa4df; 
+	border:none; 
+	text-align:center;
+}
+.tab-statement .tab-trigger a.selected { font-size:12px;
+	background:url(../themes/zhjl/images/ban_01.png) no-repeat;
+	width:40px; 
+	height:29px; 
+	line-height:29px; 
+	color:#fff; 
+	border:none; 
+	text-align:center;
+}
+.tab-statement .tab-trigger a.selected:hover { font-size:12px;
+	background:url(../themes/zhjl/images/ban_01.png) no-repeat; 
+	width:40px; 
+	height:29px; 
+	line-height:29px; 
+	color:#fff; 
+	border:none; 
+	text-align:center;
+}
+
+
+
+			

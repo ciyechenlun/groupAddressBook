@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* 
+	@名称: style
+	@功能: 欢迎页面CSS
+	@作者: 李三来
+*/
+.marqueeData{
+	padding-top:15px;
+	height: 40px;
+	white-space: nowrap;
+	FONT-STYLE: normal;
+	FONT-FAMILY: 微软雅黑;
+	COLOR: red;
+	FONT-SIZE: 24pt;
+	FONT-WEIGHT: normal;
+	TEXT-DECORATION: none
+}

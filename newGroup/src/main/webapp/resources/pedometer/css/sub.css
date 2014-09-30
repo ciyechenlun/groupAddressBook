@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0; padding:0}
+body{background:#f4f4f4; overflow:hidden; font-size:12px; color:#1b1b1b; font-family:"微软雅黑", Verdana, Geneva, sans-serif}
+ul,ol,dl,li{list-style:none}
+input{vertical-align:middle;font-family:"微软雅黑", Verdana, Geneva, sans-serif;}
+a{color:#313131; text-decoration:none}
+a:hover{color:#1e70c1;}
+a img{border:none 0}
+
+h1{background:url(../img/headTitBg.png) repeat-x; height:37px; line-height:36px; overflow:hidden; clear:both; font-size:14px; padding:0 20px}
+h1 span{font-weight:normal; font-size:12px}
+h2{background:#1e70c1; height:30px; line-height:30px; color:#fff;font-size:14px; padding:0 10px}
+.main{overflow:hidden; position:relative; min-height:300px}
+
+.tips{position:absolute; width:100%; bottom:0; padding:0 0 10px; line-height:24px;}
+.tips b{color:#1e70c1; font-weight:bold}
+
+.line{background:url(../img/lineBg.png) top repeat-x; height:2px; margin:0 20px 10px; overflow:hidden; clear:both;}
+.lineFull{background:url(../img/lineBg.png) top repeat-x; height:2px; margin:0 0 10px; overflow:hidden; clear:both;}
+.tipsCont{padding:0 20px}
+.boxWrap{width:100%; margin:0 auto; clear:both; overflow:hidden}
+.search{width:380px; height:80px; padding:30px 0 0}
+.openFile{padding:30px 20px 0}
+.setting{padding:30px 20px 0}
+.checkBoxWrap{border:1px solid #ccc; padding:10px;}
+.checkBoxWrap p{margin-bottom:5px}
+.btn2{width:464px; height:83px; padding:20px 0 0}
+
+.searchText{height:48px; width:324px; line-height:48px; padding-left:5px; font-size:14px; font-family:"微软雅黑", Verdana, Geneva, sans-serif; border:none; border:1px solid #ccc; border-right:none; color:#676767; vertical-align:middle}
+
+.searchBtn,.big1Btn,.big2Btn{vertical-align:middle; text-align:center; color:#fff; font-size:14px; font-family:"微软雅黑", Verdana, Geneva, sans-serif; overflow:hidden; border:none 0; cursor:pointer}
+
+.searchBtn{width:50px; height:50px; background:url(../img/btnSearchBg.png) no-repeat;}
+
+.big1Btn,.big2Btn{width:152px; height:83px; margin:0 40px; float:left;}
+.big1Btn{background:url(../img/btnBig1Bg.png) no-repeat;}
+.big2Btn{background:url(../img/btnBig2Bg.png) no-repeat;}
+
+.searchBar{padding:10px 20px 0;}
+.searchBar b{color:#1e70c1;};
+.searchBar div{margin-bottom:10px}
+.searchBar table{margin-bottom:5px}
+.searchBar td,.searchBar th{padding:3px 3px 3px 0; text-align:left}
+.inputText{width:70px; height:20px; line-height:20px; padding:0 0 0 5px; margin:0 5px 0 0; border:none 1px solid #ccc;}
+.cxbtn{background:url(../img/btnCXBg.png) repeat-x; height:22px; line-height:22px; border:none 0; padding:0 2px; overflow:hidden; color:#fff; cursor:pointer; vertical-align:middle}
+.ckbtn{background:url(../img/btnCKBg.png); width:100px; height:26px; border:none 0; text-align:center; color:#fff; cursor:pointer;  margin:10px 0 0; }
+
+.gridWrap,.userList{padding:0 20px.overflow:scorll;}
+.gridHead{height:30px; line-height:26px; font-size:14px; padding:0 10px; background:url(../img/gridHeadBg.png) bottom repeat-x; border:1px solid #d6d6d6; border-bottom:none;}
+.gridCont{border:1px solid #d6d6d6; border-top:none; overflow-y:auto;}
+.gridContStaticHeight{border:1px solid #d6d6d6; border-top:none; overflow-y:auto;height:600px;}
+.gridButtom{height:28px; line-height:18px; margin:10px 0 0}
+.gridTable{width:2000px;}
+.gridTable th,.gridTable td{text-align:left; border-bottom:1px solid #dfdfdf; padding-left:10px}
+.gridTable th{height:29px; background:#f1f1f1; }
+.gridTable td{height:27px; color:#313131}
+
+.gridTable2{width:100%; background:#fff}
+.gridTable2 th{text-align:right;border-bottom:1px solid #dfdfdf; padding:5px 5px 0; width:100px; background:#f1f1f1}
+.gridTable2 td{text-align:left;border-bottom:1px solid #dfdfdf; padding:5px 0 0 5px}
+
+.paging{height:28px}
+.paging a{margin:0 5px;}
+.paging .pageNum{width:17px; height:17px; line-height:17px; text-align:center; display:inline-block; border:1px solid #a3a3a3; margin:0 1px}
+.paging .pageNum:hover{background:#417eb7; color:#fff}
+.pageSelected{background:#417eb7; border:1px solid #245b8e; color:#fff}
+
+.leftCont{overflow:hidden}
+.rightCont{background:url(../img/rightContBg.png) left top repeat-y; height:100%;}
+.rightContMain{height:100%;}
+.treeWrap{width:180px; overflow:auto}
+
+.userList{padding-top:15px}
+.userInfo{height:80px; margin:0 0 10px; clear:both; overflow:hidden}
+.userInfo img{margin-right:10px}
+.userInfo dl{width:300px; float:left}
+.userInfo dt{color:#1e70c1; font-size:14px; font-weight:bold; margin-bottom:3px}
+.userInfo dt span{font-size:12px; font-weight:normal}
+.userInfo dd{width:150px; float:left; overflow:hidden; height:21px;}
+
+.userInfo p{float:right}
+
+.chartWrap{background:#fff; min-height:400px; height:auto; margin:0 20px; border:1px solid #ddd}
+
+.w30{width:30px;}
+.w40{width:40px;}
+.w50{width:50px;}
+.w60{width:60px;}
+.w70{width:70px;}
+.w80{width:80px;}
+.w90{width:90px;}
+.w100{width:100px;}
+.w110{width:110px;}
+.w120{width:120px;}
+.w130{width:130px;}
+.w140{width:140px;}
+.w150{width:150px;}
+.w180{width:180px;}
+.mt20{margin-top:20px}
+.left{float:left}
+.right{float:right}
+.tr{text-align:right}
+.red{color:#f33}
+.blue{color:#1e70c1;}
+.clearFix{clear:both; overflow:hidden; height:0; line-height:0}
